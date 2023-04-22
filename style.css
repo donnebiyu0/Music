@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    list-style-type: none;
+}
+html{
+    background-color: #262626;
+    font-family: 'Montserrat+Alternates', sans-serif;
+    color: #fff;
+    font-size: 62.5%;
+    overflow: hidden;
+}
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.music-container{
+    width: 25vw;
+    height: 80vh;
+    border-radius: 2rem;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: inset 4vmin 0 3vmin -2vmin rgba(0, 0, 0, 0.5),
+            inset -4vmin 0 3vmin -2vmin rgba(0, 0, 0, 0.5);
+}
+.img-wrapper{
+    width: 19vw;
+    height: 19vw;
+    margin-bottom: 3rem;
+    border-radius: 50%;
+    box-shadow: rgba(59, 173, 252, 0.35) 0px 5px 15px;
+}
+.album-art{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    padding: .4rem;
+    border: .1rem solid transparent; 
+    background-clip: padding-box; 
+    background-image: linear-gradient(to right, #fc5c7d, #6a82fb);
+}
+.album-art.change{
+    animation: artanimation 25s infinite linear;
+}
+@keyframes artanimation {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}.music-detail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.artist-name{
+    font-size: 2.1rem;
+    font-weight: 900;
+    letter-spacing: .05rem;
+    margin-bottom: .5rem;
+}
+.music-title{
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    letter-spacing: .06rem;
+}
+.progress-wrapper{
+    width: 100%;
+    margin-bottom: .8rem;
+    height: .3rem;
+    border-radius: .3rem;
+    background-color: #000;
+    position: relative;
+}
+.progress-bar{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: .36rem;
+    width: 0%;
+    background-color: 	rgb(59, 173, 252);
+    transition: width .3s;
+}
+.time{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    top: -40px;
+}
+.time span{
+    font-size: 1.2rem;
+}
+.progress-bar::after{
+    content: '';
+    position: absolute;
+    width: .9rem;
+    height: .9rem;
+    border-radius: 50%;
+    background-color: #3badfc;
+    right: -.2rem;
+    transform: translateY(-50%);
+    top: 50%;
+    border-radius: 1rem;
+}
+.controls{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    height: 3rem;
+}
+.music-controls{
+    display: flex;
+    width: 70%;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 3rem;
+}
+.controls i{
+    font-size: 1.5rem;
+    color: #3badfc;
+    transition: color .2s;
+}
+.controls i:hover{
+    color: #3188c6;
+}
+.music-controls i{
+    font-size: 2.5rem;
+    padding: .5rem;
+}
+
+.random{
+    position: relative;
+}
+.random.change::after{
+    content: '';
+    width: .2rem;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%) rotate(-30deg);
+    background-color: #82bbe4;
+    position: absolute;
+}
+.duration{
+    align-self: flex-end;
+}
+/* volume button style */
+.volume{
+    position: relative;
+}
+.slider-wrapper{
+    position: absolute;
+    top: -30px;
+    left: 0;
+    display: flex;
+    visibility: collapse;
+    justify-content: space-evenly;
+    align-items: center;
+    transform-origin: left;
+    transform: rotate(-90deg) translateX(5px) translateY(10px);
+    width: 200px;
+    height: 50px;
+    border-radius: 3rem;
+    background-color: rgba(255, 255, 255, .1);
+    z-index: 100;
+    opacity: 0;
+    transition: all .2s;
+}
+.slider-wrapper.change{
+    opacity: 1;
+    visibility: visible;
+}
+.slider-value{
+    transform: rotate(90deg);
+    font-size: larger;
+    letter-spacing: 1px;
+    font-weight: 800;
+}
+
+/* end of volume button style */
+
+@media (min-width: 1300px) {
+    html{
+        font-size: 110%;
+    }
+    .music-container {
+        height: 100vh;
+    }
+}
+@media (min-width: 1200px) {
+    html{
+        font-size: 100%;
+    }
+}
+@media (min-width: 1000px) {
+    .music-container{
+        height: 70vh;
+        justify-content: space-evenly;
+    }
+}
+@media (max-width: 1000px) {
+    .html{
+        font-size: 120%;
+    }
+
+    .music-container{
+        justify-content: space-evenly;
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        padding: 0 4rem;
+    }
+    .img-wrapper{
+        width: 40vh;
+        height: 40vh;
+    }
+    .album-art{
+        object-fit: fill;
+        animation: none;
+    }
+    .artist-name{
+        font-size: 3rem;
+    }
+    .music-title{
+        font-size: 2rem;
+    }
+    .controls i{
+        font-size: 3rem;
+    }
+    .music-controls i{
+        font-size: 5rem;
+    }
+    .progress-wrapper{
+        position: relative;
+    }
+    .time{
+        position: absolute;
+        bottom: -2px;
+    }
+    .time span{
+        font-size: 2rem;
+    }
+}
+@media (max-width: 600px) {
+    html{
+        font-size: 55%;
+    }
+}
+@media (max-width: 400px) {
+    html{
+        font-size: 55%;
+    }
+    .controls i{
+        font-size: 3rem;
+    }
+    .music-controls i{
+        font-size: 4rem;
+    }
+}
+

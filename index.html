@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Element</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="music-container">
+        <div class="img-wrapper">
+          <img src="images/default.jpg" alt="Music" class="album-art" />
+        </div>
+        <audio src="" class="music"></audio>
+        <div class="music-detail">
+          <p class="artist-name"></p>
+          <p class="music-title"></p>
+        </div>
+        <div class="progress-wrapper">
+          <div class="progress-bar"></div>
+          <div class="time">
+            <span class="current-time"></span>
+            <span class="duration">0:00</span>
+          </div>
+        </div>
+        <div class="controls">
+          <div class="random change">
+            <i class="fa-solid fa-shuffle"></i>
+          </div>
+          <div class="music-controls">
+            <div class="previous">
+              <i class="fa-solid fa-backward-step"></i>
+            </div>
+            <div class="play-stop">
+              <i class="fa-solid fa-play"></i>
+            </div>
+            <div class="next">
+              <i class="fa-solid fa-forward-step"></i>
+            </div>
+          </div>
+          <div class="volume">
+            <i class="fa-solid fa-volume-high"></i>
+            <div class="slider-wrapper">
+              <div class="slider">
+                <input type="range" min="0" max="100" value="50" />
+                <!-- <progress min="0" max="100" value="50"></progress> -->
+              </div>
+              <p class="slider-value">50</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
